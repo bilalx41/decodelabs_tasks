@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AI Student Hub</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- LOADER -->
+
+<div id="loader">
+    <h1>🚀 AI Student Hub</h1>
+    <div class="loading-bar">
+        <div class="loading-fill"></div>
+    </div>
+</div>
+
+<!-- MAIN APP -->
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            🚀 AI Hub
+        </div>
+
+        <nav>
+
+            <a href="#dashboard">
+                📊 Dashboard
+            </a>
+
+            <a href="#tasks">
+                📚 Tasks
+            </a>
+
+            <a href="#notes-section">
+                📝 Notes
+            </a>
+
+            <a href="#analytics">
+                📈 Analytics
+            </a>
+
+            <a href="#settings">
+                ⚙ Settings
+            </a>
+
+        </nav>
+
+    </aside>
+
+    <!-- CONTENT -->
+
+    <main class="content">
+
+        <!-- HEADER -->
+
+        <header>
+
+            <div>
+                <h1 id="welcomeText">
+                    Welcome Back Student
+                </h1>
+
+                <p id="dateTime"></p>
+            </div>
+
+            <button id="themeBtn">
+                🌙 Dark Mode
+            </button>
+
+        </header>
+
+        <!-- DASHBOARD -->
+
+        <section id="dashboard">
+
+            <div class="dashboard-grid">
+
+                <div class="card">
+
+                    <h2>📊 Progress</h2>
+
+                    <div class="progress-container">
+
+                        <svg width="180" height="180">
+
+                            <circle
+                                cx="90"
+                                cy="90"
+                                r="70"
+                                stroke="#ffffff20"
+                                stroke-width="12"
+                                fill="none">
+                            </circle>
+
+                            <circle
+                                id="progressCircle"
+                                cx="90"
+                                cy="90"
+                                r="70"
+                                stroke="#7c3aed"
+                                stroke-width="12"
+                                fill="none"
+                                stroke-linecap="round">
+                            </circle>
+
+                        </svg>
+
+                        <div id="progressText">
+                            0%
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="card">
+
+                    <h2>🔥 Study Streak</h2>
+
+                    <h1 id="streak">
+                        0 Days
+                    </h1>
+
+                </div>
+
+                <div class="card">
+
+                    <h2>🏆 Achievement</h2>
+
+                    <div id="badge">
+                        No Achievement Yet
+                    </div>
+
+                </div>
+
+                <div class="card">
+
+                    <h2>⏰ Live Clock</h2>
+
+                    <h1 id="liveClock">
+                        00:00:00
+                    </h1>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- TASKS -->
+
+        <section id="tasks">
+
+            <div class="card">
+
+                <h2>📚 Assignment Tracker</h2>
+
+                <div class="task-controls">
+
+                    <input
+                        type="text"
+                        id="taskInput"
+                        placeholder="Enter Task">
+
+                    <select id="priority">
+
+                        <option value="high">
+                            High Priority
+                        </option>
+
+                        <option value="medium">
+                            Medium Priority
+                        </option>
+
+                        <option value="low">
+                            Low Priority
+                        </option>
+
+                    </select>
+
+                    <button id="addTask">
+                        Add Task
+                    </button>
+
+                </div>
+
+                <input
+                    type="text"
+                    id="searchTask"
+                    placeholder="🔍 Search Task">
+
+                <ul id="taskList"></ul>
+
+            </div>
+
+        </section>
+
+        <!-- POMODORO -->
+
+        <section>
+
+            <div class="card">
+
+                <h2>⏱ Pomodoro Timer</h2>
+
+                <div id="timer">
+                    25:00
+                </div>
+
+                <div class="pomodoro-modes">
+
+                    <button id="studyMode">
+                        Study
+                    </button>
+
+                    <button id="shortBreak">
+                        Short Break
+                    </button>
+
+                    <button id="longBreak">
+                        Long Break
+                    </button>
+
+                </div>
+
+                <div class="timer-buttons">
+
+                    <button id="startTimer">
+                        Start
+                    </button>
+
+                    <button id="pauseTimer">
+                        Pause
+                    </button>
+
+                    <button id="resetTimer">
+                        Reset
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- NOTES -->
+
+        <section id="notes-section">
+
+            <div class="card">
+
+                <h2>📝 Notes</h2>
+
+                <textarea
+                    id="notes"
+                    placeholder="Write your notes here..."></textarea>
+
+            </div>
+
+        </section>
+
+        <!-- ANALYTICS -->
+
+        <section id="analytics">
+
+            <div class="analytics-grid">
+
+                <div class="card">
+
+                    <h2>Total Tasks</h2>
+
+                    <h1 id="totalTasks">
+                        0
+                    </h1>
+
+                </div>
+
+                <div class="card">
+
+                    <h2>Completed</h2>
+
+                    <h1 id="completedTasks">
+                        0
+                    </h1>
+
+                </div>
+
+                <div class="card">
+
+                    <h2>Pending</h2>
+
+                    <h1 id="pendingTasks">
+                        0
+                    </h1>
+
+                </div>
+
+                <div class="card">
+
+                    <h2>Completion Rate</h2>
+
+                    <h1 id="completionRate">
+                        0%
+                    </h1>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- CALENDAR -->
+
+        <section>
+
+            <div class="card">
+
+                <h2>📅 Calendar</h2>
+
+                <div id="calendar"></div>
+
+            </div>
+
+        </section>
+
+        <!-- SETTINGS -->
+
+        <section id="settings">
+
+            <div class="card">
+
+                <h2>🎨 Theme Colors</h2>
+
+                <div class="theme-picker">
+
+                    <span class="color purple"></span>
+                    <span class="color blue"></span>
+                    <span class="color green"></span>
+                    <span class="color red"></span>
+                    <span class="color orange"></span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<!-- ACHIEVEMENT POPUP -->
+
+<div id="achievementPopup">
+
+    <h2>
+        🎉 Achievement Unlocked
+    </h2>
+
+    <p id="achievementText"></p>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
